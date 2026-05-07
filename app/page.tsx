@@ -1,4 +1,5 @@
 export const dynamic = 'force-dynamic'
+export const revalidate = 0
 
 import { createSupabaseAdminClient } from '@/lib/supabase-admin'
 import ProductGrid, { type StoreProduct } from './ProductGrid'
