@@ -69,6 +69,7 @@ export default async function StorePage() {
 
   return (
     <div className="relative min-h-screen" style={{ background: '#FDF6EE', color: '#3D2B1F' }}>
+    <div className="mx-auto w-full max-w-[1200px]">
 
       {/* Grain texture overlay */}
       <div className="grain-overlay" aria-hidden />
@@ -148,6 +149,7 @@ export default async function StorePage() {
           </a>
         </div>
       )}
+    </div> {/* max-w-[1200px] container */}
     </div>
   )
 }

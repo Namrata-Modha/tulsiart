@@ -91,7 +91,7 @@ export default function ProductGrid({ products, contactNumber }: Props) {
   return (
     <>
       {/* ── Product grid ── */}
-      <div className="grid grid-cols-1 min-[360px]:grid-cols-2 gap-x-3 gap-y-9">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-3 gap-y-9">
         {products.map((product, idx) => {
           const images = sortedImages(product.product_images)
           const cover = images.find((img) => img.is_cover) ?? images[0]
@@ -117,7 +117,7 @@ export default function ProductGrid({ products, contactNumber }: Props) {
                   boxShadow: '0 4px 20px rgba(61,43,31,0.10), 0 1px 4px rgba(61,43,31,0.06)',
                 }}
               >
-                <div className="aspect-[3/4] w-full overflow-hidden">
+                <div className="h-[260px] sm:h-[320px] lg:h-[380px] w-full overflow-hidden">
                   {cover ? (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img
