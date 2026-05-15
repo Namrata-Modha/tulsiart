@@ -220,6 +220,8 @@ export async function saveSettings(
     if (error) return { error: error.message }
   }
 
+  revalidatePath('/admin/settings') // ensure fresh data on next visit
+  revalidatePath('/')               // store page shows updated name/instructions
   return { success: true }
 }
 

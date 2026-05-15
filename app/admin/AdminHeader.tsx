@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import AddProductModal from './AddProductModal'
+import LogoutButton from './LogoutButton'
 
 type Props = {
   title: string
@@ -13,7 +14,7 @@ export default function AdminHeader({ title, showAddProduct = false }: Props) {
         <h1 className="text-base font-semibold text-gray-900 shrink-0">{title}</h1>
 
         <div className="flex items-center">
-          {/* "Store ↗" hidden on mobile — not needed mid-admin workflow */}
+          {/* "Store ↗" hidden on mobile — shown in page content instead */}
           <Link
             href="/"
             target="_blank"
@@ -37,8 +38,13 @@ export default function AdminHeader({ title, showAddProduct = false }: Props) {
             Settings
           </Link>
 
+          {/* Logout — icon on mobile, text on desktop */}
+          <div className="flex items-center justify-center min-h-[44px] px-2 sm:px-3">
+            <LogoutButton />
+          </div>
+
           {showAddProduct && (
-            <div className="ml-2">
+            <div className="ml-1">
               <AddProductModal />
             </div>
           )}
